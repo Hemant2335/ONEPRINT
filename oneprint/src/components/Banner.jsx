@@ -8,12 +8,12 @@ const Banner = () => {
         {/* Text */}
         <div className='w-full p-4'>
             <h1 className='text-[10vh]  font-poppins font- text-[#F9F6EE] font-bold'>Discover new PRINTS</h1>
-            <p className='text-gray-400 text-lg font-poppins font-medium'>We specialize in crafting new prints that inspire, captivate, and bring your visions to life with vibrant artistry.</p>
+            <p className='mt-5 text-gray-400 text-lg font-poppins font-medium'>We specialize in crafting new prints that inspire, captivate, and bring your visions to life with vibrant artistry.</p>
 
-            <div className='mt-10 flex gap-5'>
-                <button className='bg-[#F9F6EE] text-black font-poppins font-medium p-4 rounded-lg mt-5'>Customize</button>
+            <div className='mt-5 flex gap-5'>
+                <button className='bg-[#F9F6EE] hover:scale-105 transition-transform text-black font-poppins font-medium p-4 rounded-lg mt-5'>Customize</button>
                 <hr className='text-white'/>
-                <button className='bg-[#F9F6EE] text-black font-poppins font-medium p-4 rounded-lg mt-5'>Place order</button>
+                <button className='bg-[#F9F6EE] hover:scale-105 transition-transform text-black font-poppins font-medium p-4 rounded-lg mt-5'>Place order</button>
             </div>
         </div>
 
