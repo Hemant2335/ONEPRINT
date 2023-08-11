@@ -39,9 +39,9 @@ const Navbar = () => {
           </div>
 
           {/* User */}
-          <div>
+          <div className="hover:scale-105 transition-transform">
             <a
-              className="hover:scale-105  font-medium cursor-pointer shadow-3xl font-poppins  border-gray-400 p-2 rounded-lg text-[#F9F6EE] hover:text-black hover:bg-[#DDD0C8]  transition-transform "
+              className="  font-medium cursor-pointer shadow-3xl font-poppins text-black  border-gray-400 p-2 rounded-lg  hover:scale-105 hover:text-black hover:bg-red-400 bg-[#DDD0C8]  transition-transform "
               onClick={() => navigate("/login")}
             >
               Log In
