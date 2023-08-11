@@ -3,11 +3,11 @@ import bannimg from '../assets/bannimg.jpg'
 
 const Banner = () => {
   return (
-    <div className='bg-[#343434] min-h-[80vh] rounded-3xl mt-5 flex gap-4 p-[8vh]'>
+    <div className='bg-[#343434] md:min-h-[80vh] rounded-3xl mt-5 flex gap-4 md:p-[8vh] p-[4vh]'>
 
         {/* Text */}
-        <div className='w-full p-4'>
-            <h1 className='text-[10vh]  font-poppins font- text-[#F9F6EE] font-bold'>Discover new PRINTS</h1>
+        <div className='w-full md:p-4 '>
+            <h1 className='md:text-[10vh] text-[8vh] font-poppins text-[#F9F6EE] font-bold'>Explore new PRINTS</h1>
             <p className='mt-5 text-gray-400 text-lg font-poppins font-medium'>We specialize in crafting new prints that inspire, captivate, and bring your visions to life with vibrant artistry.</p>
 
             <div className='mt-5 flex gap-5'>
@@ -17,7 +17,7 @@ const Banner = () => {
             </div>
         </div>
 
-        <div className='w-full'>
+        <div className='w-full hidden md:flex'>
             <img src={bannimg} alt="" className='w-[80vh] object-cover rounded-xl'/>
         </div>
 

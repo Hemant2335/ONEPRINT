@@ -1,18 +1,42 @@
-import React from 'react'
-import ProductCard from './ProductCard'
+import React from "react";
+import ProductCard from "./ProductCard";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 const ShopSection = () => {
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1
+    }
+  };
   return (
-    <div className='mt-5 p-4 mb-10'>
-        <h1 className='text-2xl font-poppins font-semibold text-[#F9F6EE] '>Trending 🔥</h1>
-
-        <div className='grid grid-cols-3 px-4'>
-            <ProductCard/>
-            <ProductCard/>
-            <ProductCard/>
-        </div>
+    <div className="mt-5 p-4 mb-10">
+      <h1 className="text-2xl font-poppins font-semibold text-[#F9F6EE] ">
+        Trending 🔥
+      </h1>
+      <Carousel responsive={responsive}>
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+      </Carousel>
     </div>
-  )
-}
+  );
+};
 
-export default ShopSection
+export default ShopSection;

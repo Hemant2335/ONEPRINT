@@ -3,8 +3,8 @@ import img from "../assets/testimg.png";
 
 const ProductCard = () => {
   return (
-    <div className="mt-10">
-      <div className="max-w-[50vh]">
+    <div className="mt-10 mb-10 mx-5 shadow-3xl">
+      <div className="md:max-w-[50vh] min-w-[20vh] md:min-w-[50vh]">
         <img src={img} alt="" className="rounded-xl" />
         <div className="flex items-center justify-between px-2">
           <div>
