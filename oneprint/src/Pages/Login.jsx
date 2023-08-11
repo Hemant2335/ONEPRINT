@@ -51,9 +51,11 @@ const Login = () => {
                 }}
               />
             </div>
-            <button className="bg-[#F9F6EE] hover:bg-red-400  hover:scale-105 transition-transform text-black font-poppins font-medium p-4 rounded-lg mt-5 w-fit">
+            <p onClick={()=>{navigate("/register")}} className="font-poppins text-[#F9F6EE] hover:text-red-400 cursor-pointer ">Don't have a account ? Register</p>
+            <button className="bg-[#F9F6EE] hover:bg-red-400  hover:scale-105 transition-transform text-black font-poppins font-medium p-4 rounded-lg  w-fit">
               Login
             </button>
+            
           </div>
         </div>
         <div className="hidden md:flex w-full max-h-[85vh] ">

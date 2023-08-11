@@ -65,7 +65,8 @@ const Register = () => {
                   }}
                 />
               </div>
-              <button className='bg-[#F9F6EE] hover:scale-105 transition-transform text-black font-poppins font-medium p-4 rounded-lg mt-5 w-fit'>Create Account</button>
+              <p onClick={()=>{navigate("/login")}} className="font-poppins text-[#F9F6EE] hover:text-red-400 cursor-pointer ">Already a User ? Login</p>
+              <button className='bg-[#F9F6EE] hover:scale-105 transition-transform text-black font-poppins font-medium p-4 rounded-lg  w-fit'>Create Account</button>
           </div>
         </div>
         <div className="hidden md:flex w-full max-h-[85vh] ">
