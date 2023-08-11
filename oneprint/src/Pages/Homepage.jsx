@@ -5,9 +5,9 @@ const Homepage = () => {
   return (
       <Wrapper>
         <Banner/>
-        <ShopSection/>
-        <ShopSection/>
-        <ShopSection/>
+        <ShopSection name  = "Trending 🔥"/>
+        <ShopSection name  = "Latest 🤓"/>
+        <ShopSection name = "Popular ❤️"/>
       </Wrapper>
   )
 }

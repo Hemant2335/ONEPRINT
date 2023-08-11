@@ -3,10 +3,10 @@ import img from "../assets/testimg.png";
 
 const ProductCard = () => {
   return (
-    <div className="mt-10 mb-10 mx-5 shadow-3xl">
+    <div className="mt-10 mb-10 mx-5 ">
       <div className="md:max-w-[50vh] min-w-[20vh] md:min-w-[50vh]">
         <img src={img} alt="" className="rounded-xl" />
-        <div className="flex items-center justify-between px-2">
+        <div className="flex items-center justify-between px-2 shadow-3xl p-4">
           <div>
             <h1 className="text-lg text-[#F9F6EE] font-poppins font-medium mt-5 ">
               Product Name

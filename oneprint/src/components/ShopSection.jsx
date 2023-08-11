@@ -3,7 +3,7 @@ import ProductCard from "./ProductCard";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-const ShopSection = () => {
+const ShopSection = ({name}) => {
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -26,7 +26,7 @@ const ShopSection = () => {
   return (
     <div className="mt-5 p-4 mb-10">
       <h1 className="text-2xl font-poppins font-semibold text-[#F9F6EE] ">
-        Trending 🔥
+        {name}
       </h1>
       <Carousel responsive={responsive}>
         <ProductCard />
