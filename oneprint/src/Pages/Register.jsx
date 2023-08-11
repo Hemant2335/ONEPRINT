@@ -1,8 +1,12 @@
 import React from "react";
 import { Wrapper } from "../components";
 import regimg from "../assets/regimg.jpg";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
+
+  const navigate = useNavigate();
+
   return (
     <Wrapper>
       <div className="flex bg-[#343434] rounded-lg ">
