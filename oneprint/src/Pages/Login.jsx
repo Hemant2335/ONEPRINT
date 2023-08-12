@@ -1,11 +1,32 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { Wrapper } from "../components";
 import logimg from "../assets/logimg.jpg";
 import {FcGoogle} from "react-icons/fc";
 
 const Login = () => {
   const navigate = useNavigate();
+
+  const loginwithGoogle = async () => {
+    try {
+      const auth = getAuth(); // Get the authentication instance
+      const provider = new GoogleAuthProvider(); // Create a Google Auth provider instance
+
+      // Sign in with Google popup
+      const userCredential = await signInWithPopup(auth, provider);
+
+      // Successfully signed in
+      const idtoken = userCredential.user.getIdToken();
+      sessionStorage.setItem("authToken", idtoken);
+      navigate("/mainscreen");
+    } catch (error) {
+      // Handle sign-in error
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorCode, errorMessage);
+    }
+  };
 
   return (
     <Wrapper>
@@ -20,7 +41,7 @@ const Login = () => {
           <div
             className="flex justify-center w-fit mt-5 items-center gap-2 bg-[#F9F6EE] p-4 rounded-lg font-poppins font-medium cursor-pointer hover:bg-red-400 hover:scale-105 transition-transform"
             onClick={() => {
-              login();
+              loginwithGoogle();
             }}
           >
             <h3 className="text-md md:text-xl">Continue with Google</h3>

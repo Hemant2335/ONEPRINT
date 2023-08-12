@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import {Navbar , Fotter} from "./components" ;
 import { Homepage , Shop , Login , Register } from './Pages';
+import { app } from './firebaseconfig';
 
 const App = () => {
   return (
