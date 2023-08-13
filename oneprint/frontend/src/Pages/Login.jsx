@@ -4,9 +4,13 @@ import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { Wrapper } from "../components";
 import logimg from "../assets/logimg.jpg";
 import {FcGoogle} from "react-icons/fc";
+import { useState } from "react";
 
 const Login = () => {
   const navigate = useNavigate();
+
+  const [Email, setEmail] = useState(null)
+  const [Password, setPassword] = useState(null)
 
   const loginwithGoogle = async () => {
     try {
@@ -56,7 +60,7 @@ const Login = () => {
                 type="email"
                 className=" mt-2 w-full rounded-lg p-4 font-poppins text-[#F9F6EE] font-medium bg-[#222222] border-2 md:w-[68vh]"
                 onChange={(e) => {
-                  setName(e.target.value);
+                  setEmail(e.target.value);
                 }}
               />
             </div>
@@ -68,7 +72,7 @@ const Login = () => {
                 type="password"
                 className="w-full mt-2 rounded-lg p-4 font-poppins text-[#F9F6EE] font-medium bg-[#222222] border-2 md:w-[68vh]"
                 onChange={(e) => {
-                  setName(e.target.value);
+                  setPassword(e.target.value);
                 }}
               />
             </div>

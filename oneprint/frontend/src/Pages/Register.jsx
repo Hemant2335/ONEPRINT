@@ -165,32 +165,32 @@ const Register = () => {
             {!pass ? (
               ""
             ) : (
-              <div class="flex mb-4 gap-10 w-full justify-center items-center">
+              <div className="flex mb-4 gap-10 w-full justify-center items-center">
                 <input
                   type="text"
-                  class="w-10 py-4 px-4 text-[#F9F6EE] border-none rounded-md bg-[#222222]"
+                  className="w-10 py-4 px-4 text-[#F9F6EE] border-none rounded-md bg-[#222222]"
                   maxLength="1"
                   name="code1"
                   onChange={Onchange}
                 />
                 <input
                   type="text"
-                  class="w-10 py-4 px-4 text-[#F9F6EE] border-none rounded-md bg-[#222222]"
-                  maxlength="1"
+                  className="w-10 py-4 px-4 text-[#F9F6EE] border-none rounded-md bg-[#222222]"
+                  maxLength="1"
                   name="code2"
                   onChange={Onchange}
                 />
                 <input
                   type="text"
-                  class="w-10 py-4 px-4 text-[#F9F6EE] border-none rounded-md bg-[#222222]"
-                  maxlength="1"
+                  className="w-10 py-4 px-4 text-[#F9F6EE] border-none rounded-md bg-[#222222]"
+                  maxLength="1"
                   name="code3"
                   onChange={Onchange}
                 />
                 <input
                   type="text"
-                  class="w-10 py-4 px-4 text-[#F9F6EE] border-none rounded-md bg-[#222222]"
-                  maxlength="1"
+                  className="w-10 py-4 px-4 text-[#F9F6EE] border-none rounded-md bg-[#222222]"
+                  maxLength="1"
                   name="code4"
                   onChange={Onchange}
                 />
