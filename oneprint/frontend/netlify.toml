@@ -1,0 +1,22 @@
+# netlify.toml
+
+[build]
+  command = "npm run build"
+  publish = "dist" 
+
+[build.environment]
+
+[VITE_FIREBASE_API_KEY]
+  value = "AIzaSyBx5m_a_VToA564dZBn_mjymX-HCBT0uCo"
+[VITE_FIREBASE_AUTH_DOMAIN]
+  value = "yourprint-fe255.firebaseapp.com"
+[VITE_FIREBASE_PROJECT_ID]
+  value = "yourprint-fe255"
+[VITE_FIREBASE_STORAGE_BUCKET]
+  value = "yourprint-fe255.appspot.com"
+[VITE_FIREBASE_MESSAGING_SENDER_ID]
+  value = "234659911880"
+[VITE_FIREBASE_APP_ID]
+  value = "1:234659911880:web:d88160962efbd4fd566dfd"
+[VITE_FIREBASE_MEASUREMENT_ID]
+  value = "G-MWZ4LG1T5N"
