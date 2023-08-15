@@ -6,13 +6,13 @@ require('dotenv').config(); // This loads the environment variables from .env
 
 // Initialize Firebase
 const firebaseConfig = {
-    apiKey: process.env.FIREBASE_API_KEY,
-    authDomain: process.env.FIREBASE_AUTH_DOMAIN,
-    projectId: process.env.FIREBASE_PROJECT_ID,
-    storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
-    appId: process.env.FIREBASE_APP_ID,
-    measurementId: process.env.FIREBASE_MEASUREMENT_ID
+  apiKey: "AIzaSyBx5m_a_VToA564dZBn_mjymX-HCBT0uCo",
+  authDomain: "yourprint-fe255.firebaseapp.com",
+  projectId: "yourprint-fe255",
+  storageBucket: "yourprint-fe255.appspot.com",
+  messagingSenderId: "234659911880",
+  appId: "1:234659911880:web:d88160962efbd4fd566dfd",
+  measurementId: "G-MWZ4LG1T5N"
 };
 
 const app = initializeApp(firebaseConfig);
