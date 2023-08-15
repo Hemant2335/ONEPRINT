@@ -1,7 +1,5 @@
 # netlify.toml
 
-# netlify.toml
-
 [build]
   command = "npm run build"
   publish = "frontend/dist"
