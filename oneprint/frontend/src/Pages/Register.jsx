@@ -26,7 +26,7 @@ const Register = () => {
 
   const register = async () => {
     if (isemailverify) {
-      const response = await fetch("http://localhost:3000/api/auth/register", {
+      const response = await fetch("https://yourprint.netlify.app/api/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
