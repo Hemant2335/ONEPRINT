@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { Wrapper } from "../components";
+import { Wrapper  , Loading} from "../components";
 import logimg from "../assets/logimg.jpg";
 import {FcGoogle} from "react-icons/fc";
 import { useState } from "react";
@@ -34,11 +34,12 @@ const Login = () => {
 
   return (
     <Wrapper>
-      <div className="flex bg-[#343434] rounded-lg ">
-        <div className="w-full h-fit md:h-[85vh] p-10">
+      <div className="flex bg-[#343434] rounded-lg">
+        <div className="w-full h-fit md:h-[85vh] p-10 ">
           <h1 className="md:text-[5vh] text-[8vh] font-poppins text-[#F9F6EE] font-bold">
             Login Account
           </h1>
+          <Loading/>
           <p className=" text-gray-400 text-lg font-poppins font-medium">
             Enter your Credentials to Login your account.
           </p>
