@@ -17,6 +17,7 @@ const Register = () => {
   const [isemailverify, setisemailverify] = useState(false);
   const [code, setcode] = useState("");
   const [pass, setpass] = useState(false);
+  const [isLoading, setisLoading] = useState(false)
   const [inputcode, setinputcode] = useState({
     code1: "",
     code2: "",
@@ -26,6 +27,7 @@ const Register = () => {
 
   const register = async () => {
     if (isemailverify) {
+      setisLoading(true);
       const response = await fetch("https://backend-zeta-seven-80.vercel.app/api/auth/register", {
         method: "POST",
         headers: {
@@ -37,6 +39,7 @@ const Register = () => {
           displayName: FirstName + " " + LastName,
         }),
       });
+      setisLoading(false);
       const json = await response.json();
       console.log(json);
       if (json.Check) {
