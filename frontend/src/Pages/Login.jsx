@@ -11,6 +11,7 @@ const Login = () => {
 
   const [Email, setEmail] = useState(null)
   const [Password, setPassword] = useState(null)
+  const [isLoading, setisLoading] = useState(false)
 
   const loginwithGoogle = async () => {
     try {
@@ -22,8 +23,8 @@ const Login = () => {
 
       // Successfully signed in
       const idtoken = userCredential.user.getIdToken();
-      sessionStorage.setItem("authToken", idtoken);
-      navigate("/mainscreen");
+      sessionStorage.setItem("uid", idtoken);
+      navigate("/");
     } catch (error) {
       // Handle sign-in error
       const errorCode = error.code;
@@ -32,14 +33,39 @@ const Login = () => {
     }
   };
 
+  const login = async () => {
+      setisLoading(true);
+      const response = await fetch("https://backend-zeta-seven-80.vercel.app/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: Email,
+          password: Password,
+        }),
+      });
+      setisLoading(false);
+      const json = await response.json();
+      if (json.Check) {
+        sessionStorage.setItem("uid", json.uid);
+        navigate("/");
+      }
+      else
+      {
+        alert(json.error)
+      }
+  };
+
+
   return (
     <Wrapper>
+      {isLoading && <Loading />}
       <div className="flex bg-[#343434] rounded-lg">
         <div className="w-full h-fit md:h-[85vh] p-10 ">
           <h1 className="md:text-[5vh] text-[8vh] font-poppins text-[#F9F6EE] font-bold">
             Login Account
           </h1>
-          <Loading/>
           <p className=" text-gray-400 text-lg font-poppins font-medium">
             Enter your Credentials to Login your account.
           </p>
@@ -78,7 +104,7 @@ const Login = () => {
               />
             </div>
             <p onClick={()=>{navigate("/register")}} className="font-poppins text-[#F9F6EE] hover:text-red-400 cursor-pointer ">Don't have a account ? Register</p>
-            <button className="bg-[#F9F6EE] hover:bg-red-400  hover:scale-105 transition-transform text-black font-poppins font-medium p-4 rounded-lg  w-fit">
+            <button className="bg-[#F9F6EE] hover:bg-red-400  hover:scale-105 transition-transform text-black font-poppins font-medium p-4 rounded-lg  w-fit" onClick={()=>login()}>
               Login
             </button>
             

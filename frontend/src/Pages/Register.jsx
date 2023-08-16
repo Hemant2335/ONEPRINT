@@ -1,5 +1,5 @@
 import React from "react";
-import { Wrapper } from "../components";
+import { Wrapper , Loading } from "../components";
 import regimg from "../assets/regimg.jpg";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -43,7 +43,7 @@ const Register = () => {
       const json = await response.json();
       console.log(json);
       if (json.Check) {
-        sessionStorage.setItem("token", json.authtoken);
+        sessionStorage.setItem("uid", json.uid);
         navigate("/");
       }
       else
@@ -78,6 +78,7 @@ const Register = () => {
   };
 
   const emailverify = () => {
+    setisLoading(true);
     emailjs.init("VyjRnBemLCagAcdN3");
     emailjs
       .send("service_jssx3ep", "template_rikejva", {
@@ -89,10 +90,12 @@ const Register = () => {
       .then(function (response) {
         console.log("Email sent successfully:", response);
         setpass(response.text);
+        setisLoading(false);
         return true;
       })
       .catch(function (error) {
         console.error("Error sending email:", error);
+        setisLoading(false);
       });
   };
 
@@ -107,6 +110,7 @@ const Register = () => {
 
   return (
     <Wrapper>
+      {isLoading ? (<Loading/>) : ("")}
       <div className="flex bg-[#343434] rounded-lg ">
         <div className="w-full h-fit  p-10 mb-10">
           <h1 className="md:text-[5vh] text-[8vh] font-poppins text-[#F9F6EE] font-bold">
@@ -168,35 +172,37 @@ const Register = () => {
             {!pass ? (
               ""
             ) : (
-              <div className="flex mb-4 gap-10 w-full justify-center items-center">
+              <div className="flex flex-col md:flex-row mb-4 gap-[5vh] w-full justify-center items-center">
+                <div className="flex gap-[2vh]">
                 <input
                   type="text"
-                  className="w-10 py-4 px-4 text-[#F9F6EE] border-none rounded-md bg-[#222222]"
+                  className="w-[6vh] py-4 px-4 text-[#F9F6EE] border-none rounded-md bg-[#222222]"
                   maxLength="1"
                   name="code1"
                   onChange={Onchange}
                 />
                 <input
                   type="text"
-                  className="w-10 py-4 px-4 text-[#F9F6EE] border-none rounded-md bg-[#222222]"
+                  className="w-[6vh] py-4 px-4 text-[#F9F6EE] border-none rounded-md bg-[#222222]"
                   maxLength="1"
                   name="code2"
                   onChange={Onchange}
                 />
                 <input
                   type="text"
-                  className="w-10 py-4 px-4 text-[#F9F6EE] border-none rounded-md bg-[#222222]"
+                  className="w-[6vh] py-4 px-4 text-[#F9F6EE] border-none rounded-md bg-[#222222]"
                   maxLength="1"
                   name="code3"
                   onChange={Onchange}
                 />
                 <input
                   type="text"
-                  className="w-10 py-4 px-4 text-[#F9F6EE] border-none rounded-md bg-[#222222]"
+                  className="w-[6vh] py-4 px-4 text-[#F9F6EE] border-none rounded-md bg-[#222222]"
                   maxLength="1"
                   name="code4"
                   onChange={Onchange}
                 />
+                </div>
                 <div className="flex justify-center">
                   <button
                     className="bg-[#F9F6EE] hover:scale-105 transition-transform text-black font-poppins font-medium p-4 rounded-lg  w-fit"
@@ -207,13 +213,13 @@ const Register = () => {
                 </div>
               </div>
             )}
-            <div>
+            <div >
               <p className="font-poppins font-semibold  text-[#F9F6EE]">
                 Password
               </p>
               <input
                 type="password"
-                className="w-full mt-2 rounded-lg p-4 font-poppins text-[#F9F6EE] font-medium bg-[#222222] border-2 md:w-[68vh]"
+                className="mt-2 w-full rounded-lg p-4 font-poppins text-[#F9F6EE] font-medium bg-[#222222] border-2 md:w-[68vh]"
                 onChange={(e) => {
                   setPassword(e.target.value);
                 }}

@@ -39,14 +39,24 @@ const Navbar = () => {
           </div>
 
           {/* User */}
-          <div className="hover:scale-105 transition-transform">
-            <a
-              className="  font-medium cursor-pointer shadow-3xl font-poppins text-black  border-gray-400 p-2 rounded-lg  hover:scale-105 hover:text-black hover:bg-red-400 bg-[#DDD0C8]  transition-transform "
+          {!sessionStorage.getItem("uid") ? (
+          <div>
+            <button
+              className="bg-[#F9F6EE] hover:scale-105 transition-transform text-black font-poppins font-medium p-3 rounded-lg "
               onClick={() => navigate("/login")}
             >
-              Log In
-            </a>
+              Login
+            </button>
           </div>
+        ) : (
+          <div className="">
+            <div
+              className="shadow-3xl cursor-pointer w-fit font-medium font-poppins px-4 py-2 bg-[#222222] rounded-md hover:bg-red-400 hover:text-black transition-transform"
+              onClick={() => toogledropdown()}
+            ><img src={profile} alt="profile" className="h-10" />
+            </div>
+          </div>
+        )}
         </div>
 
         {/* Mobile Menu */}
@@ -79,7 +89,7 @@ const Navbar = () => {
       </Wrapper>
       {ismenuclicked && (
         <div className="w-full h-fit  p-10  z-10 bg-[#222222]">
-          {sessionStorage.getItem("token") ? (
+          {sessionStorage.getItem("uid") ? (
             <div className="flex  items-center gap-5">
               <img src={profile} alt="profile" className="h-[8vh]" />
               <div>
@@ -99,7 +109,7 @@ const Navbar = () => {
             </div>
           )}
 
-          {sessionStorage.getItem("token") ? (
+          {sessionStorage.getItem("uid") ? (
             <>
               <div className="shadow-3xl p-4 mt-10 rounded-lg hover:">
                 <h1 className="text-[2vh] font-poppins text-[#F9F6EE] font-bold">
