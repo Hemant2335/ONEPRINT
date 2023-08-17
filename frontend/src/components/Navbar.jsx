@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Wrapper from "./Wrapper";
 import { CgMenuRightAlt } from "react-icons/cg";
 import { RxCross2 } from "react-icons/rx";
@@ -14,6 +14,11 @@ const Navbar = () => {
   const tooglemenu = () => {
     setismenuclicked(!ismenuclicked);
   };
+
+  
+
+  useEffect(()=>{
+  },[sessionStorage.getItem("uid")])
 
   return (
     <>

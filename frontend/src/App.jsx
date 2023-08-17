@@ -7,10 +7,12 @@ import {
 import {Navbar , Fotter} from "./components" ;
 import { Homepage , Shop , Login , Register } from './Pages';
 import { app } from './firebaseconfig';
+import StateProvider from './context/State';
 
 const App = () => {
   return (
     <div>
+      <StateProvider>
       <Router>
         <Navbar/>
         <Routes>
@@ -21,6 +23,7 @@ const App = () => {
         </Routes>
         <Fotter/>
       </Router>
+      </StateProvider>
     </div>
   )
 }
