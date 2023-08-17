@@ -5,9 +5,13 @@ import { Wrapper  , Loading} from "../components";
 import logimg from "../assets/logimg.jpg";
 import {FcGoogle} from "react-icons/fc";
 import { useState } from "react";
+import StateContext from "../context/Context";
+import { useContext } from "react";
 
 const Login = () => {
   const navigate = useNavigate();
+
+  const {fetchuser} = useContext(StateContext);
 
   const [Email, setEmail] = useState(null)
   const [Password, setPassword] = useState(null)
@@ -17,10 +21,8 @@ const Login = () => {
     try {
       const auth = getAuth(); // Get the authentication instance
       const provider = new GoogleAuthProvider(); // Create a Google Auth provider instance
-
       // Sign in with Google popup
       const userCredential = await signInWithPopup(auth, provider);
-
       // Successfully signed in
       const idtoken = userCredential.user.getIdToken();
       sessionStorage.setItem("uid", idtoken);
@@ -48,6 +50,7 @@ const Login = () => {
       setisLoading(false);
       const json = await response.json();
       if (json.Check) {
+        fetchuser();
         sessionStorage.setItem("uid", json.uid);
         navigate("/");
       }
