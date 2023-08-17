@@ -6,8 +6,13 @@ import { HiOutlineUserCircle } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import profile from "../assets/man.png";
+import { useContext } from "react";
+import StateContext from "../context/Context";
 
 const Navbar = () => {
+
+  const {User} = useContext(StateContext);
+
   const [ismenuclicked, setismenuclicked] = useState(false);
   const navigate = useNavigate();
 
@@ -99,10 +104,10 @@ const Navbar = () => {
               <img src={profile} alt="profile" className="h-[8vh]" />
               <div>
                 <h1 className="text-[2vh] font-poppins text-[#F9F6EE] font-bold">
-                  Nishant Kumar
+                  {User?.Name}
                 </h1>
                 <p className="mt-2 text-gray-400  font-poppins font-medium">
-                  knrt73373@gmail.com
+                  {User?.Email}
                 </p>
               </div>
             </div>

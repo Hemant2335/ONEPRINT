@@ -50,7 +50,7 @@ const Login = () => {
       setisLoading(false);
       const json = await response.json();
       if (json.Check) {
-        fetchuser();
+        fetchuser(json.uid);
         sessionStorage.setItem("uid", json.uid);
         navigate("/");
       }

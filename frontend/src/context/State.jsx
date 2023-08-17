@@ -8,9 +8,9 @@ const StateProvider = ({ children }) => {
         Email : "",
     })
 
-    const fetchuser = async () => {
+    const fetchuser = async (uid) => {
 
-        const res  = await fetch(`https://backend-zeta-seven-80.vercel.app/api/auth/user/${sessionStorage.getItem("uid")}` , {
+        const res  = await fetch(`https://backend-zeta-seven-80.vercel.app/api/auth/user/${uid}` , {
             method : "GET",
             headers : {
                 "Content-Type" : "application/json",
@@ -24,7 +24,7 @@ const StateProvider = ({ children }) => {
         })
     }
     return (
-        <StateContext.Provider value={[User , fetchuser]}>
+        <StateContext.Provider value={{ User, fetchuser }}>
         {children}
         </StateContext.Provider>
     );
