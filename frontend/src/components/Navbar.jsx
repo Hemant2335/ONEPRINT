@@ -1,6 +1,9 @@
 import React, { useEffect } from "react";
 import Wrapper from "./Wrapper";
 import { CgMenuRightAlt } from "react-icons/cg";
+import { BiHomeAlt2 } from "react-icons/bi";
+import { BiCategory } from "react-icons/bi";
+import { BiCompass } from "react-icons/bi";
 import { RxCross2 } from "react-icons/rx";
 import { HiOutlineUserCircle } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
@@ -122,18 +125,18 @@ const Navbar = () => {
           {sessionStorage.getItem("uid") ? (
             <>
               <div className="shadow-3xl p-4 mt-10 rounded-lg hover:">
-                <h1 className="text-[2vh] font-poppins text-[#F9F6EE] font-bold">
-                  Home
+                <h1 className="text-[2vh] font-poppins text-[#F9F6EE] font-bold flex gap-2 justify-center items-center">
+                  <BiHomeAlt2 className="text-[2.2vh]"/> Home
                 </h1>
               </div>
               <div className="shadow-3xl p-4 mt-5 rounded-lg hover:">
-                <h1 className="text-[2vh] font-poppins text-[#F9F6EE] font-bold">
-                  Home
+                <h1 className="text-[2vh] font-poppins text-[#F9F6EE] font-bold flex gap-2 justify-center items-center">
+                  <BiCategory className="text-[2.2vh]"/>Category
                 </h1>
               </div>
               <div className="shadow-3xl p-4 mt-5 rounded-lg hover:">
-                <h1 className="text-[2vh] font-poppins text-[#F9F6EE] font-bold">
-                  Home
+                <h1 className="text-[2vh] font-poppins text-[#F9F6EE] font-bold flex gap-2 justify-center items-center">
+                <BiCompass className="text-[2.2vh]"/>Explore
                 </h1>
               </div>
             </>
