@@ -11,7 +11,7 @@ import { useContext } from "react";
 const Login = () => {
   const navigate = useNavigate();
 
-  const {fetchuser} = useContext(StateContext);
+  const {fetchuser , setUser} = useContext(StateContext);
 
   const [Email, setEmail] = useState(null)
   const [Password, setPassword] = useState(null)
@@ -24,8 +24,13 @@ const Login = () => {
       // Sign in with Google popup
       const userCredential = await signInWithPopup(auth, provider);
       // Successfully signed in
-      const idtoken = userCredential.user.getIdToken();
+      const idtoken = userCredential.user.uid;
+      setUser({
+        Name : userCredential.user.displayName,
+        Email : userCredential.user.email
+      })
       sessionStorage.setItem("uid", idtoken);
+      
       navigate("/");
     } catch (error) {
       // Handle sign-in error

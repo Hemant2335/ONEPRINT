@@ -24,7 +24,7 @@ const StateProvider = ({ children }) => {
         })
     }
     return (
-        <StateContext.Provider value={{ User, fetchuser }}>
+        <StateContext.Provider value={{ User, fetchuser , setUser }}>
         {children}
         </StateContext.Provider>
     );
