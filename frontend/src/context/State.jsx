@@ -23,6 +23,13 @@ const StateProvider = ({ children }) => {
             Email : data?.email
         })
     }
+
+    useEffect(() => {
+        if(sessionStorage.getItem("uid")){
+            fetchuser(sessionStorage.getItem("uid"));
+        }
+    } , [sessionStorage.getItem("uid")])
+
     return (
         <StateContext.Provider value={{ User, fetchuser , setUser }}>
         {children}
