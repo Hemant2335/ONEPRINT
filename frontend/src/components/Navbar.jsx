@@ -43,7 +43,7 @@ const Navbar = () => {
             <h1 className="text-md font-poppins absolute top-8 left-4  text-[#F9F6EE] gap-2 hover:text-[#DDD0C8] flex items-center" onClick={() => tooglemenu()}>
                 <RxCross2 className="text-3xl cursor-pointer " />
             </h1>
-            <div >
+            {sessionStorage.getItem("uid") ? (            <div >
               <div className="shadow-3xl px-10 py-4 mt-10 rounded-lg w-fit bg-[#343434] transition-transform cursor-pointer group hover:bg-[#F9F6EE] ">
                 <h1 className="text-[2vh] font-poppins text-[#F9F6EE] font-bold flex gap-2 justify-center group-hover:text-[#222222] items-center">
                   <BiHomeAlt2 className="text-[2.2vh]" /> Home
@@ -52,7 +52,7 @@ const Navbar = () => {
               <div className="shadow-3xl px-10 py-4 mt-10 rounded-lg w-fit bg-[#343434] transition-transform cursor-pointer group hover:bg-[#F9F6EE]">
                 <h1 className="text-[2vh] font-poppins text-[#F9F6EE] font-bold flex gap-2 justify-center items-center group-hover:text-[#222222] ">
                   <BiCategory className="text-[2.2vh]" />
-                  Category
+                  Cart
                 </h1>
               </div>
               <div className="shadow-3xl px-10 py-4 mt-10 rounded-lg w-fit bg-[#343434] transition-transform cursor-pointer group hover:bg-[#F9F6EE]">
@@ -61,7 +61,12 @@ const Navbar = () => {
                   Explore
                 </h1>
               </div>
-            </div>
+            </div>) :(<div className="shadow-3xl px-10 py-4 mt-10 rounded-lg w-fit bg-[#343434] transition-transform cursor-pointer group hover:bg-[#F9F6EE] ">
+                <h1 className="text-[2vh] font-poppins text-[#F9F6EE] font-bold flex gap-2 justify-center group-hover:text-[#222222] items-center">
+                  <HiOutlineUserCircle className="text-[2.2vh]" /> Login
+                </h1>
+              </div>)}
+
             </div>
           </div>)}
           
@@ -169,7 +174,7 @@ const Navbar = () => {
               <div className="shadow-3xl px-10 py-4 mt-10 rounded-lg w-fit bg-[#343434] transition-transform cursor-pointer group hover:bg-[#F9F6EE]">
                 <h1 className="text-[2vh] font-poppins text-[#F9F6EE] font-bold flex gap-2 justify-center items-center">
                   <BiCategory className="text-[2.2vh]" />
-                  Category
+                  Cart
                 </h1>
               </div>
               <div className="shadow-3xl px-10 py-4 mt-10 rounded-lg w-fit bg-[#343434] transition-transform cursor-pointer group hover:bg-[#F9F6EE]">
