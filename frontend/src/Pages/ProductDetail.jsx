@@ -13,6 +13,7 @@ const ProductDetail = () => {
               src={bannimg}
               alt=""
               className="h-[50vh] object-cover rounded-xl"
+              loading="lazy"
             />
           </div>
           <div className=" w-full md:w-[50vw] h-full p-4">
