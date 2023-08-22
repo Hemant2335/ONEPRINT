@@ -1,12 +1,16 @@
 import React from "react";
 import img from "../assets/testimg.png";
+import { useNavigate } from "react-router-dom";
 
 const ProductCard = () => {
+
+  const navigate = useNavigate();
+
   return (
-    <div className="mt-10 mb-10 mx-5 ">
+    <div className="mt-10 mb-10 mx-5 " >
       <div className="md:max-w-[50vh] min-w-[20vh] md:min-w-[50vh]">
         <img src={img} alt="" className="rounded-xl" />
-        <div className="flex items-center justify-between px-2 shadow-3xl p-4">
+        <div className="flex items-center justify-between px-2 shadow-3xl p-4 rounded-md">
           <div>
             <h1 className="text-lg text-[#F9F6EE] font-poppins font-medium mt-5 ">
               Product Name
@@ -20,7 +24,7 @@ const ProductCard = () => {
               </h2>
             </div>
           </div>
-          <button className="bg-[#F9F6EE] hover:scale-105 transition-transform text-black font-poppins font-medium p-4 rounded-lg mt-5">
+          <button className="bg-[#F9F6EE] hover:scale-105 transition-transform text-black font-poppins font-medium p-4 rounded-lg mt-5"onClick={()=>{navigate("/productdetails/productname")}}>
             Buy
           </button>
         </div>
