@@ -1,8 +1,13 @@
 import React from "react";
 import { Wrapper  , ShopSection} from "../components";
 import bannimg from "../assets/bannimg.jpg";
+import { useNavigate } from "react-router-dom";
 
 const ProductDetail = () => {
+
+  const navigate = useNavigate();
+
+
   return (
     <>
       <Wrapper>
@@ -39,7 +44,7 @@ const ProductDetail = () => {
             </p>
             <h2 className="md:text-[2.5vh] text-[2vh] mt-[4vh] font-poppins text-gray-400 font-bold">Delivery Available</h2>
             <p className="md:text-[2.4vh] text-[1.8vh] font-poppins text-red-400 mt-1 font-medium ">Jaypee University of Engineering and Technology</p>
-            <button className="bg-[#F9F6EE] hover:scale-105 transition-transform text-black font-poppins font-medium p-4 rounded-lg mt-10">
+            <button className="bg-[#F9F6EE] hover:scale-105 transition-transform text-black font-poppins font-medium p-4 rounded-lg mt-10" onClick={sessionStorage.getItem("uid")?(()=>{navigate("/cart")}):(()=>{navigate("/login")})}>
               Add to cart
             </button>
           </div>
