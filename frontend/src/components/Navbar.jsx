@@ -165,25 +165,25 @@ const Navbar = () => {
           )}
 
           {sessionStorage.getItem("uid") ? (
-            <>
-              <div className="shadow-3xl p-4 mt-10 rounded-lg hover:">
-                <h1 className="text-[2vh] font-poppins text-[#F9F6EE] font-bold flex gap-2 justify-center items-center">
+            <div className="flex flex-col justify-center items-center">
+              <div className="shadow-3xl px-10 py-4 mt-10 rounded-lg w-fit bg-[#343434] transition-transform cursor-pointer group hover:bg-[#F9F6EE] ">
+                <h1 className="text-[2vh] font-poppins text-[#F9F6EE] font-bold flex gap-2 justify-center group-hover:text-[#222222] items-center">
                   <BiHomeAlt2 className="text-[2.2vh]" /> Home
                 </h1>
               </div>
               <div className="shadow-3xl px-10 py-4 mt-10 rounded-lg w-fit bg-[#343434] transition-transform cursor-pointer group hover:bg-[#F9F6EE]">
-                <h1 className="text-[2vh] font-poppins text-[#F9F6EE] font-bold flex gap-2 justify-center items-center">
+                <h1 className="text-[2vh] font-poppins text-[#F9F6EE] font-bold flex gap-2 justify-center items-center group-hover:text-[#222222] ">
                   <BiCategory className="text-[2.2vh]" />
                   Cart
                 </h1>
               </div>
               <div className="shadow-3xl px-10 py-4 mt-10 rounded-lg w-fit bg-[#343434] transition-transform cursor-pointer group hover:bg-[#F9F6EE]">
-                <h1 className="text-[2vh] font-poppins text-[#F9F6EE] font-bold flex gap-2 justify-center items-center">
+                <h1 className="text-[2vh] font-poppins text-[#F9F6EE] font-bold flex gap-2 justify-center items-center group-hover:text-[#222222] ">
                   <BiCompass className="text-[2.2vh]" />
                   Explore
                 </h1>
               </div>
-            </>
+            </div>
           ) : (
             ""
           )}
