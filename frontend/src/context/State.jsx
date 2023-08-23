@@ -10,7 +10,7 @@ const StateProvider = ({ children }) => {
 
     const fetchuser = async (uid) => {
 
-        const res  = await fetch(`https://backend-zeta-seven-80.vercel.app/api/auth/user/${uid}` , {
+        const res  = await fetch(`https://backend-zeta-seven-80.vercel.app/api/auth/user/${sessionStorage.getItem("uid")}` , {
             method : "GET",
             headers : {
                 "Content-Type" : "application/json",
