@@ -42,6 +42,9 @@ const ProductDetail = () => {
               laboriosam facere ut, molestiae natus odio, rem totam voluptate
               repellat animi perferendis illo perspiciatis error.
             </p>
+            <h2 className="md:text-[3vh] text-[2vh] font-poppins mt-5 text-red-400 font-bold">
+            $5.00
+          </h2>
             <h2 className="md:text-[2.5vh] text-[2vh] mt-[4vh] font-poppins text-gray-400 font-bold">Delivery Available</h2>
             <p className="md:text-[2.4vh] text-[1.8vh] font-poppins text-red-400 mt-1 font-medium ">Jaypee University of Engineering and Technology</p>
             <button className="bg-[#F9F6EE] hover:scale-105 transition-transform text-black font-poppins font-medium p-4 rounded-lg mt-10" onClick={sessionStorage.getItem("uid")?(()=>{navigate("/cart")}):(()=>{navigate("/login")})}>

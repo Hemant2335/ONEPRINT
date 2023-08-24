@@ -77,7 +77,7 @@ const Navbar = () => {
               className="text-[3.1vh] text-[#F9F6EE]   cursor-pointer hover:text-[#DDD0C8] transition-transform font-poppins font-black"
               onClick={() => navigate("/")}
             >
-              ONEPRINT
+              STICKERVERSE
             </h1>
           </div>
 
@@ -131,7 +131,7 @@ const Navbar = () => {
               className="text-[3.1vh] text-[#F9F6EE]   cursor-pointer hover:text-[#DDD0C8] transition-transform font-poppins font-black"
               onClick={() => navigate("/")}
             >
-              ONEPRINT
+              STICKERVERSE
             </h1>
           </div>
         </div>

@@ -5,9 +5,9 @@ const Cart = () => {
   return (
     <div>
       <Wrapper>
-        <div className="flex justify-between">
+        <div className="md::flex justify-between">
           <div className="p-4">
-            <h1 className="md:text-[6vh] m-2 text-[8vh] font-poppins text-[#F9F6EE] font-bold">
+            <h1 className="md:text-[6vh] m-2 text-[4vh] font-poppins text-[#F9F6EE] font-bold">
               Cart
             </h1>
             {/* Products part */}
@@ -25,8 +25,8 @@ const Cart = () => {
 
           {/* Total part */}
 
-          <div className="flex  w-fit h-fit  flex-col max-w-[20vw] p-4 m-[10vh] bg-[#343434] rounded-lg">
-            <h1 className="md:text-[3vh] m-2 text-[8vh] font-poppins text-[#F9F6EE] font-bold">
+          <div className="flex  w-fit h-fit  flex-col md:max-w-[20vw] md:p-4 p-4 m-4 md:m-[10vh] bg-[#343434] rounded-lg">
+            <h1 className="md:text-[3vh] m-2 text-[2vh] font-poppins text-[#F9F6EE] font-bold">
               Summary
             </h1>
             <p className="md:text-[2.4vh] text-[1.8vh] font-poppins text-gray-600 font-medium mt-[4vh]">
