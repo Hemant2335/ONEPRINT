@@ -1,6 +1,7 @@
 import React from "react";
 import bannimg from "../assets/miles.jpg";
 import { useState } from "react";
+import { RiDeleteBin4Line } from "react-icons/ri";
 
 const CartproductCard = () => {
 
@@ -23,7 +24,7 @@ const CartproductCard = () => {
   }
 
   return (
-    <div className="flex gap-[10vw]">
+    <div className="flex gap-[10vw] bg-[#343434] p-4 rounded-xl">
       <div className="flex gap-5 ">
         <div className="md:w-fit w-full rounded-lg ">
           <img
@@ -43,6 +44,7 @@ const CartproductCard = () => {
           <h2 className="md:text-[3vh] text-[2vh] font-poppins mt-2 text-red-400 font-bold">
             $5.00
           </h2>
+          <h1 className="md:text-[3vh] text-[2vh] font-poppins mt-2 text-[#F9F6EE] font-bold cursor-pointer "><RiDeleteBin4Line/></h1>
         </div>
       </div>
 
