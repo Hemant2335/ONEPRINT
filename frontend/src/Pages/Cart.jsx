@@ -5,7 +5,7 @@ const Cart = () => {
   return (
     <div>
       <Wrapper>
-        <div className="md::flex justify-between">
+        <div className="md:flex justify-between">
           <div className="p-4">
             <h1 className="md:text-[6vh] m-2 text-[4vh] font-poppins text-[#F9F6EE] font-bold">
               Cart
