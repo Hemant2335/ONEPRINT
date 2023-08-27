@@ -56,12 +56,6 @@ const StateProvider = ({ children }) => {
         }
     } , [sessionStorage.getItem("uid")])
 
-    useEffect(() => {
-        if(sessionStorage.getItem("token")){
-            LoginwithGoogle();
-        }
-    } , [sessionStorage.getItem("token")])
-
     return (
         <StateContext.Provider value={{ User, fetchuser , setUser }}>
         {children}

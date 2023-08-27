@@ -1,14 +1,19 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import {getDoc, doc , setDoc , getFirestore} from "firebase/firestore";
 import { Wrapper  , Loading} from "../components";
 import logimg from "../assets/logimg.jpg";
 import {FcGoogle} from "react-icons/fc";
 import { useState } from "react";
 import StateContext from "../context/Context";
 import { useContext } from "react";
+import {app} from "../firebaseconfig";
 
 const Login = () => {
+
+  const db = getFirestore(app);
+
   const navigate = useNavigate();
 
   const {fetchuser , setUser} = useContext(StateContext);
@@ -24,12 +29,19 @@ const Login = () => {
       // Sign in with Google popup
       const userCredential = await signInWithPopup(auth, provider);
       // Successfully signed in
+      const userDoc = await getDoc(doc(db, "users", userCredential?.user?.uid));
+
+      if (!userDoc.exists()) {
+        await setDoc(doc(db, "users", userCredential?.user?.uid), {
+          uid: userCredential?.user?.uid,
+          displayName: userCredential?.user?.displayName,
+          email: userCredential?.user?.email,
+          isadmin: false,
+        });
+      }
       const idtoken = userCredential.user.uid;
-      setUser({
-        Name : userCredential.user.displayName,
-        Email : userCredential.user.email
-      })
-      sessionStorage.setItem("token", idtoken);
+      fetchuser(userCredential.user.uid);
+      sessionStorage.setItem("uid", idtoken);
       
       navigate("/");
     } catch (error) {
