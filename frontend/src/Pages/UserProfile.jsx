@@ -18,11 +18,11 @@ const Profile = () => {
 
   return (
     <Wrapper>
-    <div className='flex justify-center my-[10vh]'>
+    <div className='flex justify-center my-[10vh] md:mx-0 mx-[5vw]'>
         <div className='h-fit w-fit shadow-3xl flex flex-col md:flex-row gap-[10vh] justify-center items-center px-10 py-10'>
             
             <div className='shadow-3xl w-fit p-4 rounded-lg'>
-            {User?.isadmin ? (<img src={admin} alt="" className='h-[30vh]' />) : (<img src={profile} alt="" className='h-[30vh]' />)}
+            {User?.isadmin ? (<img src={admin} alt="" className='h-[20vh] md:h-[30vh]' />) : (<img src={profile} alt="" className='h-[20vh] md:h-[30vh]' />)}
                 
             </div>
             <div className='flex flex-col gap-5 '>
