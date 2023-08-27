@@ -82,7 +82,7 @@ const Navbar = () => {
           </div>
 
           {/* User */}
-          {!sessionStorage.getItem("uid") ? (
+          {!sessionStorage.getItem("uid")? (
             <div>
               <button
                 className="bg-[#F9F6EE] hover:scale-105 transition-transform text-black font-poppins font-medium p-3 rounded-lg "

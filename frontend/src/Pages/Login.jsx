@@ -29,7 +29,7 @@ const Login = () => {
         Name : userCredential.user.displayName,
         Email : userCredential.user.email
       })
-      sessionStorage.setItem("uid", idtoken);
+      sessionStorage.setItem("token", idtoken);
       
       navigate("/");
     } catch (error) {
