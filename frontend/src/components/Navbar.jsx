@@ -104,7 +104,6 @@ const Navbar = () => {
                 className="bg-[#F9F6EE] hover:scale-105 transition-transform text-black font-poppins font-medium p-3 rounded-lg "
                 onClick={() => {
                   navigate("/login");
-                  tooglemenu();
                 }}
               >
                 Login
