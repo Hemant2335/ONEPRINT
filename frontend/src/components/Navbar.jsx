@@ -39,7 +39,7 @@ const Navbar = () => {
 
           {/* Menu Screen */}
           {ismenuclicked && (
-            <div className="w-[20vw] md:flex hidden justify-center items-center   h-screen fixed bottom-0 left-0 shadow-3xl bg-[#222222] rounded-sm z-10">
+            <div className="w-[20vw] md:flex hidden justify-center items-center   h-screen fixed bottom-0 left-0 shadow-3xl bg-[#222222] rounded-sm z-20">
               <div className="p-4 ">
                 <h1
                   className="text-md font-poppins absolute top-8 left-4  text-[#F9F6EE] gap-2 hover:text-[#DDD0C8] flex items-center"
