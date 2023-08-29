@@ -17,6 +17,8 @@ const Navbar = () => {
   const [ismenuclicked, setismenuclicked] = useState(false);
   const navigate = useNavigate();
 
+  const { User } = useContext(StateContext);
+
   const tooglemenu = () => {
     setismenuclicked(!ismenuclicked);
   };
@@ -57,12 +59,18 @@ const Navbar = () => {
                         <BiHomeAlt2 className="text-[2.2vh]" /> Profile
                       </h1>
                     </div>
-                    <div className="shadow-3xl px-10 py-4 mt-10 rounded-lg w-fit bg-[#343434] transition-transform cursor-pointer group hover:bg-[#F9F6EE]">
+                    {User.isadmin ? (<div className="shadow-3xl px-10 py-4 mt-10 rounded-lg w-fit bg-[#343434] transition-transform cursor-pointer group hover:bg-[#F9F6EE]">
+                      <h1 className="text-[2vh] font-poppins text-[#F9F6EE] font-bold flex gap-2 justify-center items-center group-hover:text-[#222222] ">
+                        <BiCategory className="text-[2.2vh]" />
+                        Dashboard
+                      </h1>
+                    </div>) : (<div className="shadow-3xl px-10 py-4 mt-10 rounded-lg w-fit bg-[#343434] transition-transform cursor-pointer group hover:bg-[#F9F6EE]">
                       <h1 className="text-[2vh] font-poppins text-[#F9F6EE] font-bold flex gap-2 justify-center items-center group-hover:text-[#222222] ">
                         <BiCategory className="text-[2.2vh]" />
                         Cart
                       </h1>
-                    </div>
+                    </div>)}
+                    
                     <div className="shadow-3xl px-10 py-4 mt-10 rounded-lg w-fit bg-[#343434] transition-transform cursor-pointer group hover:bg-[#F9F6EE]">
                       <h1 className="text-[2vh] font-poppins text-[#F9F6EE] font-bold flex gap-2 justify-center items-center group-hover:text-[#222222] ">
                         <BiCompass className="text-[2.2vh]" />

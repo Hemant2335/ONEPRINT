@@ -16,7 +16,7 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  const {fetchuser , setUser} = useContext(StateContext);
+  const {fetchuser} = useContext(StateContext);
 
   const [Email, setEmail] = useState(null)
   const [Password, setPassword] = useState(null)
