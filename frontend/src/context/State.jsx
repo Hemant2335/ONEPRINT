@@ -7,6 +7,7 @@ const StateProvider = ({ children }) => {
     const [User, setUser] = useState({
         Name : "",
         Email : "",
+        isadmin : false
     })
 
     const fetchuser = async (uid) => {
@@ -21,7 +22,8 @@ const StateProvider = ({ children }) => {
         console.log(data);
         setUser({
             Name : data?.displayName,
-            Email : data?.email
+            Email : data?.email,
+            isadmin : data?.isadmin
         })
     }
 

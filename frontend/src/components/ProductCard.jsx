@@ -1,5 +1,5 @@
 import React from "react";
-import img from "../assets/testimg.png";
+import img from "../assets/sticktest.png";
 import { useNavigate } from "react-router-dom";
 
 const ProductCard = () => {
