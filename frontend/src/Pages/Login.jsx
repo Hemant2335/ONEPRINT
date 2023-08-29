@@ -16,7 +16,7 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  const {fetchuser} = useContext(StateContext);
+  const {fetchuser , setUser} = useContext(StateContext);
 
   const [Email, setEmail] = useState(null)
   const [Password, setPassword] = useState(null)
@@ -39,11 +39,19 @@ const Login = () => {
           isadmin: false,
         });
       }
-      const idtoken = userCredential.user.uid;
-      fetchuser(userCredential.user.uid);
-      sessionStorage.setItem("uid", idtoken);
-      
-      navigate("/");
+      const idtoken = userCredential?.user?.uid;
+      if(idtoken)
+      {
+        console.log(idtoken);
+        setUser({
+          Name : userCredential?.user?.displayName,
+          Email : userCredential?.user?.email,
+          isadmin : userCredential?.user?.isadmin
+        })
+        fetchuser(idtoken);
+        sessionStorage.setItem("uid", idtoken);
+        navigate("/");
+      }
     } catch (error) {
       // Handle sign-in error
       const errorCode = error.code;

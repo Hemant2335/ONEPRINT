@@ -59,7 +59,7 @@ const Navbar = () => {
                         <BiHomeAlt2 className="text-[2.2vh]" /> Profile
                       </h1>
                     </div>
-                    {User.isadmin ? (<div className="shadow-3xl px-10 py-4 mt-10 rounded-lg w-fit bg-[#343434] transition-transform cursor-pointer group hover:bg-[#F9F6EE]">
+                    {User.isadmin ? (<div className="shadow-3xl px-10 py-4 mt-10 rounded-lg w-fit bg-[#343434] transition-transform cursor-pointer group hover:bg-[#F9F6EE]" onClick={()=>navigate("/dashboard")}>
                       <h1 className="text-[2vh] font-poppins text-[#F9F6EE] font-bold flex gap-2 justify-center items-center group-hover:text-[#222222] ">
                         <BiCategory className="text-[2.2vh]" />
                         Dashboard
@@ -122,7 +122,7 @@ const Navbar = () => {
               className="shadow-3xl  cursor-pointer w-fit font-medium font-poppins px-4 py-2 bg-[#222222] rounded-md hover:bg-[#F9F6EE] hover:text-black transition-transform"
               onClick={() => navigate("/profile")}
             >
-              {localStorage.getItem("isadmin") ? (
+              {User?.isadmin? (
                 <img src={adminprofile} alt="profile" className="h-10" />
               ) : (
                 <img src={profile} alt="profile" className="h-10" />
