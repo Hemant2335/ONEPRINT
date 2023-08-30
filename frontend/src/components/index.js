@@ -6,5 +6,6 @@ import ShopSection from "./ShopSection";
 import ProductCard from "./ProductCard";
 import Loading from "./Loading";
 import CartproductCard from "./CartproductCard";
+import DashCard from "./DashCard";
 
-export { Wrapper , Navbar, Fotter, Banner  , ShopSection , ProductCard  , Loading , CartproductCard};
+export { Wrapper , Navbar, Fotter, Banner  , ShopSection , ProductCard  , Loading , CartproductCard , DashCard};

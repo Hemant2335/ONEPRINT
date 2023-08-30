@@ -9,9 +9,10 @@ const StateProvider = ({ children }) => {
         Email : "",
         isadmin : false
     })
+    const [isLoadingstate, setisLoadingstate] = useState(false);
 
     const fetchuser = async (uid) => {
-
+        setisLoadingstate(true);
         const res  = await fetch(`https://backend-zeta-seven-80.vercel.app/api/auth/user/${sessionStorage.getItem("uid")}` , {
             method : "GET",
             headers : {
@@ -25,6 +26,7 @@ const StateProvider = ({ children }) => {
             Email : data?.email,
             isadmin : data?.isadmin
         })
+        setisLoadingstate(false);
     }
 
 
@@ -36,7 +38,7 @@ const StateProvider = ({ children }) => {
     } , [sessionStorage.getItem("uid")])
 
     return (
-        <StateContext.Provider value={{ User, fetchuser , setUser }}>
+        <StateContext.Provider value={{ User, fetchuser , setUser , isLoadingstate }}>
         {children}
         </StateContext.Provider>
     );

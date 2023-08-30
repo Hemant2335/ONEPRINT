@@ -1,5 +1,6 @@
 import React from 'react'
 import Wrapper from '../components/Wrapper'
+import { Loading } from '../components';
 import profile from "../assets/man.png";
 import admin from "../assets/profile.png";
 import { useContext } from 'react';
@@ -8,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Profile = () => {
 
-    const { User } = useContext(StateContext);
+    const { User , isLoadingstate} = useContext(StateContext);
     const navigate = useNavigate();
 
     const logout = () => {
@@ -18,6 +19,7 @@ const Profile = () => {
 
   return (
     <Wrapper>
+        {isLoadingstate && (<Loading/>)}
     <div className='flex justify-center my-[10vh] md:mx-0 mx-[5vw]'>
         <div className='h-fit w-fit shadow-3xl flex flex-col md:flex-row gap-[10vh] justify-center items-center px-10 py-10'>
             

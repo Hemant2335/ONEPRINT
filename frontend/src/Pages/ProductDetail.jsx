@@ -1,16 +1,19 @@
 import React from "react";
-import { Wrapper  , ShopSection} from "../components";
+import { Wrapper  , ShopSection , Loading} from "../components";
 import bannimg from "../assets/bannimg.jpg";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import StateContext from "../context/Context";
 
 const ProductDetail = () => {
 
   const navigate = useNavigate();
-
+  const {isLoadingstate} = useContext(StateContext)
 
   return (
     <>
       <Wrapper>
+      {isLoadingstate && (<Loading/>)}
         <div className=" h-[85vh] rounded-lg  items-center p-5 mt-10">
           <div className="md:flex gap-[15vh]">
           <div className="md:w-[35vw] w-full  p-4 rounded-lg">

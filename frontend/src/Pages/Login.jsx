@@ -48,9 +48,13 @@ const Login = () => {
           Email : userCredential?.user?.email,
           isadmin : userCredential?.user?.isadmin
         })
-        fetchuser(idtoken);
         sessionStorage.setItem("uid", idtoken);
-        navigate("/");
+        if (sessionStorage.getItem("uid"))
+        {
+          fetchuser();
+          navigate("/");
+        }
+        
       }
     } catch (error) {
       // Handle sign-in error
@@ -75,9 +79,13 @@ const Login = () => {
       setisLoading(false);
       const json = await response.json();
       if (json.Check) {
-        fetchuser(json.uid);
+        console.log(json);
         sessionStorage.setItem("uid", json.uid);
-        navigate("/");
+        if (sessionStorage.getItem("uid"))
+        {
+          fetchuser();
+          navigate("/");
+        }
       }
       else
       {

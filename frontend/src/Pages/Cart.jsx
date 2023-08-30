@@ -1,10 +1,16 @@
 import React from "react";
-import { Wrapper, CartproductCard } from "../components";
+import { Wrapper, CartproductCard  , Loading} from "../components";
+import { useContext } from "react";
+import StateContext from "../context/Context";
 
 const Cart = () => {
+
+  const {isLoadingstate} = useContext(StateContext);
+
   return (
     <div>
       <Wrapper>
+        {isLoadingstate && (<Loading/>)}
         <div className="md:flex justify-between">
           <div className="p-4">
             <h1 className="md:text-[6vh] m-2 text-[4vh] font-poppins text-[#F9F6EE] font-bold">
