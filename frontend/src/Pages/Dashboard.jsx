@@ -12,25 +12,25 @@ import stockimg from "../assets/stock.jpg";
 const dashoptions = [{
   Name : "ORDERS",
   Img : orderimg,
-  Link : "/orders",
+  Link : "/dashboard/orders",
   Desc : "Here you can see all the orders placed by the users and their status and details" 
 },
 {
   Name : "UPLOAD",
   Img : uploadimg,
-  Link : "/upload",
+  Link : "/dashboard/upload",
   Desc : "Here you can upload new Stickers to the database and make them available for the users"
 },
 {
   Name : "REQUESTS",
   Img : requestimg,
-  Link : "/requests",
+  Link : "/dashboard/requests",
   Desc : "Here you can see all the requests placed by the users"
 },
 {
   Name : "STOCK",
   Img : stockimg,
-  Link : "/stock",
+  Link : "/dashboard/stock",
   Desc : "Here you can see all the stock available"
 }]
 

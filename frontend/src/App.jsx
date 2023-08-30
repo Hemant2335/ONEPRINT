@@ -5,7 +5,7 @@ import {
   Route,
 } from "react-router-dom";
 import {Navbar , Fotter} from "./components" ;
-import { Homepage , Shop , Login , Register , ProductDetail  , Cart , Profile , Dashboard} from './Pages';
+import { Homepage , Shop , Login , Register , ProductDetail  , Cart , Profile , Dashboard , Upload} from './Pages';
 import { app } from './firebaseconfig';
 import StateProvider from './context/State';
 
@@ -24,6 +24,7 @@ const App = () => {
           <Route exact path="/cart" element={<Cart/>} />
           <Route exact path="/profile" element={<Profile/>} />
           <Route exact path="/dashboard" element={<Dashboard/>} />
+          <Route exact path="/dashboard/upload" element={<Upload/>} />
         </Routes>
         <Fotter/>
       </Router>

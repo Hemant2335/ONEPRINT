@@ -1,6 +1,10 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const DashCard = ({data}) => {
+
+  const navigate = useNavigate();
+
   return (
     <div className="bg-[#343434] relative md:min-h-[50vh] rounded-3xl mt-5 flex gap-4 md:p-[4vh] p-[4vh]">
       {/* Text */}

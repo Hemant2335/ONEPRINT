@@ -6,5 +6,6 @@ import ProductDetail from "./ProductDetail";
 import Cart from "./Cart";
 import Profile from "./UserProfile";
 import Dashboard from "./Dashboard";
+import Upload from "./Upload"
 
-export { Homepage, Login, Register, Shop , ProductDetail , Cart , Profile , Dashboard };
+export { Homepage, Login, Register, Shop , ProductDetail , Cart , Profile , Dashboard , Upload };
