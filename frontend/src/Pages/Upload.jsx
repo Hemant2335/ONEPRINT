@@ -24,16 +24,17 @@ const Upload = () => {
       const formData = new FormData();
       formData.append('image', isselected);
       console.log(formData);
-      const response = await fetch(`http://localhost:3000/upload/${sessionStorage.getItem("uid")}`, {
+      const response = await fetch(`http://localhost:3000/api/dashboard/upload/${sessionStorage.getItem("uid")}`, {
         method: 'POST',
         body: formData,
       });
+      const data = await response.json();
+      console.log(data);
 
-      if(response.ok){
-        setisuploaded(true);
-        const data = await response.json();
+      if(data?.Check){
+        setisuploaded(true); 
         alert("Image uploaded successfully");
-        console.log(data);
+        console.log(data?.imgurl);
         setisLoading(false);
       }
       else{
