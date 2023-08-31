@@ -11,6 +11,11 @@ const Upload = () => {
   const [isuploaded, setisuploaded] = useState(false);
   const [isselected, setisselected] = useState(null);
   const [isLoading, setisLoading] = useState(false);
+  const [imgurl, setimgurl] = useState("");
+  const [Cat, setCat] = useState("");
+  const [Price, setPrice] = useState("");
+  const [Desc, setDesc] = useState("");
+  const [Genere, setGenere] = useState("");
 
   const handleupload = async() => {
     if(!isselected){
@@ -33,6 +38,42 @@ const Upload = () => {
 
       if(data?.Check){
         setisuploaded(true); 
+        alert("Image uploaded successfully");
+        setimgurl(data?.imgurl);
+        setisLoading(false);
+      }
+      else{
+        alert("Some error occured");
+        console.log(response.statusText);
+        setisLoading(false);
+      }
+      
+      
+    } catch (error) {
+      
+    }
+  }
+
+  const uploadsubmit = async() => {
+    try {
+      setisLoading(true);
+      const response = await fetch(`http://localhost:3000/api/dashboard/uploadsubmit/${sessionStorage.getItem("uid")}`, {
+        method: 'POST',
+        body: JSON.stringify({
+          photo: imgurl,
+          description: Desc,
+          price: Price,
+          category1: Cat,
+          genre1: Genere
+        }),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      const data = await response.json();
+      console.log(data);
+
+      if(data?.Check){
         alert("Image uploaded successfully");
         console.log(data?.imgurl);
         setisLoading(false);
@@ -95,7 +136,7 @@ const Upload = () => {
                   type="text"
                   className="w-full mt-2 rounded-lg p-4 font-poppins text-[#F9F6EE] font-medium bg-[#222222] border-2 md:w-[68vh]"
                   onChange={(e) => {
-                    setPassword(e.target.value);
+                    setDesc(e.target.value);
                   }}
                 />
               </div>
@@ -107,7 +148,7 @@ const Upload = () => {
                   type="number"
                   className="w-full mt-2 rounded-lg p-4 font-poppins text-[#F9F6EE] font-medium bg-[#222222] border-2 md:w-[68vh]"
                   onChange={(e) => {
-                    setPassword(e.target.value);
+                    setPrice(e.target.value);
                   }}
                 />
               </div>
@@ -119,16 +160,28 @@ const Upload = () => {
                   type="text"
                   className="w-full mt-2 rounded-lg p-4 font-poppins text-[#F9F6EE] font-medium bg-[#222222] border-2 md:w-[68vh]"
                   onChange={(e) => {
-                    setPassword(e.target.value);
+                    setCat(e.target.value);
+                  }}
+                />
+              </div>
+              <div  className="mt-5">
+                <p className="font-poppins font-semibold  text-[#F9F6EE]">
+                  Genre
+                </p>
+                <input
+                  type="text"
+                  className="w-full mt-2 rounded-lg p-4 font-poppins text-[#F9F6EE] font-medium bg-[#222222] border-2 md:w-[68vh]"
+                  onChange={(e) => {
+                    setGenere(e.target.value);
                   }}
                 />
               </div>
             </div>
             <button
               className="bg-red-400 hover:scale-105 transition-transform text-black font-poppins font-medium p-3 rounded-md  w-fit"
-              onClick={() => logout()}
+              onClick={() => uploadsubmit()}
             >
-              Logout
+              Submit
             </button>
           </div>
         </div>
