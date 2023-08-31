@@ -16,6 +16,7 @@ const Upload = () => {
   const [Price, setPrice] = useState("");
   const [Desc, setDesc] = useState("");
   const [Genere, setGenere] = useState("");
+  const [Name, setName] = useState("");
 
   const handleupload = async() => {
     if(!isselected){
@@ -60,6 +61,7 @@ const Upload = () => {
       const response = await fetch(`http://localhost:3000/api/dashboard/uploadsubmit/${sessionStorage.getItem("uid")}`, {
         method: 'POST',
         body: JSON.stringify({
+          name : Name,
           photo: imgurl,
           description: Desc,
           price: Price,
@@ -127,6 +129,18 @@ const Upload = () => {
                 ) : (
                   <MdCloudDone className="cursor-pointer text-3xl hover:scale-105 transition-transform text-[#F9F6EE]" />
                 )}
+              </div>
+              <div  className="mt-5">
+                <p className="font-poppins font-semibold  text-[#F9F6EE]">
+                  Name
+                </p>
+                <input
+                  type="text"
+                  className="w-full mt-2 rounded-lg p-4 font-poppins text-[#F9F6EE] font-medium bg-[#222222] border-2 md:w-[68vh]"
+                  onChange={(e) => {
+                    setName(e.target.value);
+                  }}
+                />
               </div>
               <div  className="mt-5">
                 <p className="font-poppins font-semibold  text-[#F9F6EE]">
