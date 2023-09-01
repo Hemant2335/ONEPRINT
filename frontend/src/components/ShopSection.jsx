@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ProductCard from "./ProductCard";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-const ShopSection = ({name}) => {
+const ShopSection = ({name , data}) => {
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -29,11 +29,9 @@ const ShopSection = ({name}) => {
         {name}
       </h1>
       <Carousel responsive={responsive}>
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+        {data?.map((data) => {
+          return <ProductCard data={data} key={data?._id} />;
+        })}
       </Carousel>
     </div>
   );
