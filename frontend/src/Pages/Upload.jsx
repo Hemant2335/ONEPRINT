@@ -6,6 +6,7 @@ import { MdCloudDone } from "react-icons/md";
 import { useState } from "react";
 
 
+
 const Upload = () => {
 
   const [isuploaded, setisuploaded] = useState(false);
@@ -40,7 +41,8 @@ const Upload = () => {
       if(data?.Check){
         setisuploaded(true); 
         alert("Image uploaded successfully");
-        setimgurl(data?.imgurl);
+        setimgurl(data?.imageUrl);
+        console.log(data?.imageUrl)
         setisLoading(false);
       }
       else{
@@ -76,9 +78,18 @@ const Upload = () => {
       console.log(data);
 
       if(data?.Check){
-        alert("Image uploaded successfully");
-        console.log(data?.imgurl);
+        alert("data uploaded successfully");
+        console.log(data);
         setisLoading(false);
+        setisuploaded(false);
+        setisselected(null);
+        setimgurl("");
+        setCat("");
+        setPrice("");
+        setDesc("");
+        setGenere("");
+        setName("");
+
       }
       else{
         alert("Some error occured");
@@ -100,7 +111,8 @@ const Upload = () => {
       <div className="flex justify-center my-[10vh] md:mx-0 mx-[5vw]">
         <div className="h-fit w-fit shadow-3xl flex flex-col md:flex-row gap-[10vh] justify-center items-center px-10 py-10">
           <div className="shadow-3xl w-fit p-4 rounded-lg">
-            <img src={profile} alt="" className="h-[20vh] md:h-[30vh]" />
+            {imgurl ? (<img src={imgurl} alt="" className="h-[20vh] md:h-[30vh]" />) : (<img src={profile} alt="" className="h-[20vh] md:h-[30vh]" />)}
+            
           </div>
           <div className="flex flex-col gap-5 ">
           <div className="mt-5">
