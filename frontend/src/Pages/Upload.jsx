@@ -1,5 +1,5 @@
 import React from "react";
-import profile from "../assets/profile.png";
+import profile from "../assets/uploadimage.jpg";
 import { Loading, Wrapper } from "../components";
 import { FiUploadCloud } from "react-icons/fi";
 import { MdCloudDone } from "react-icons/md";
