@@ -31,7 +31,7 @@ const Upload = () => {
       const formData = new FormData();
       formData.append('image', isselected);
       console.log(formData);
-      const response = await fetch(`http://localhost:3000/api/dashboard/upload/${sessionStorage.getItem("uid")}`, {
+      const response = await fetch(`https://backend-zeta-seven-80.vercel.app/api/dashboard/upload/${sessionStorage.getItem("uid")}`, {
         method: 'POST',
         body: formData,
       });
