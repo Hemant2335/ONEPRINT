@@ -24,7 +24,7 @@ const ProductCard = ({data}) => {
               </h2>
             </div>
           </div>
-          <button className="bg-[#F9F6EE] hover:scale-105 transition-transform text-black font-poppins font-medium p-4 rounded-lg mt-5"onClick={()=>{navigate("/productdetails/productname")}}>
+          <button className="bg-[#F9F6EE] hover:scale-105 transition-transform text-black font-poppins font-medium p-4 rounded-lg mt-5"onClick={()=>{navigate(`/productdetails/${data?.name}`)}}>
             Buy
           </button>
         </div>

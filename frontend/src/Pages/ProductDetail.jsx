@@ -1,14 +1,33 @@
-import React from "react";
+import React, { useEffect , useState } from "react";
 import { Wrapper  , ShopSection , Loading} from "../components";
 import bannimg from "../assets/bannimg.jpg";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useContext } from "react";
 import StateContext from "../context/Context";
 
 const ProductDetail = () => {
-
+  const {slug} = useParams();
   const navigate = useNavigate();
   const {isLoadingstate} = useContext(StateContext)
+  const [data, setdata] = useState("")
+
+  const fetchdata = async () => {
+    try {
+      
+      const response = await fetch(
+        `http://localhost:3000/api/product/products/${slug}`
+      );
+      const data = await response.json();
+      setdata(data);
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+    fetchdata();
+  }, []);
 
   return (
     <>
@@ -18,7 +37,7 @@ const ProductDetail = () => {
           <div className="md:flex gap-[15vh]">
           <div className="md:w-[35vw] w-full  p-4 rounded-lg">
             <img
-              src={bannimg}
+              src={data?.[0]?.photo}
               alt=""
               className="h-[50vh] object-cover rounded-xl"
               loading="lazy"
@@ -26,27 +45,21 @@ const ProductDetail = () => {
           </div>
           <div className=" w-full md:w-[50vw] h-full p-4">
             <h1 className="md:text-[5vh] text-[4vh] font-poppins text-[#F9F6EE] font-bold">
-              Batman in the Wilds premium sticker
+              {data?.[0]?.name}
             </h1>
             <div className="flex gap-4 mt-2">
               <h2 className="md:text-[2.5vh] text-[2vh] font-poppins text-gray-400 font-bold">
-                Marvel
+                {data?.[0]?.genre}
               </h2>
               <h2 className="md:text-[2.5vh] text-[2vh] font-poppins text-gray-400 font-bold">
-                Trending 🔥
+                {data?.[0]?.category} 🔥
               </h2>
             </div>
             <p className="md:text-[2.4vh] text-[1.8vh] font-poppins text-gray-600 font-medium mt-[4vh]">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
-              ut at iusto commodi incidunt saepe harum nobis laudantium
-              adipisci? Iusto nesciunt sed suscipit ab, veniam iure cum ex rem
-              vero! Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Ducimus consequatur rerum nulla inventore asperiores delectus
-              laboriosam facere ut, molestiae natus odio, rem totam voluptate
-              repellat animi perferendis illo perspiciatis error.
+              {data?.[0]?.description}
             </p>
             <h2 className="md:text-[3vh] text-[2vh] font-poppins mt-5 text-red-400 font-bold">
-            $5.00
+            ${data?.[0]?.price}
           </h2>
             <h2 className="md:text-[2.5vh] text-[2vh] mt-[4vh] font-poppins text-gray-400 font-bold">Delivery Available</h2>
             <p className="md:text-[2.4vh] text-[1.8vh] font-poppins text-red-400 mt-1 font-medium ">Jaypee University of Engineering and Technology</p>
