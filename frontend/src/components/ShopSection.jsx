@@ -12,7 +12,7 @@ const ShopSection = ({name , dataname}) => {
 
   const fetchdata= async() => {
     setisloading(true)
-    const response = await fetch(`https://backend-zeta-seven-80.vercel.app/api/product/products/${dataname}`);
+    const response = await fetch(`https://backend-zeta-seven-80.vercel.app/api/product/${dataname}`);
     const data = await response.json();
     setisloading(false)
     setdata(data)

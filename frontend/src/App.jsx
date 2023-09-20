@@ -4,7 +4,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import {Navbar , Fotter} from "./components" ;
+import {Newnavbar , Fotter} from "./components" ;
 import { Homepage , Shop , Login , Register , ProductDetail  , Cart , Profile , Dashboard , Upload} from './Pages';
 import { app } from './firebaseconfig';
 import StateProvider from './context/State';
@@ -14,7 +14,7 @@ const App = () => {
     <div>
       <StateProvider>
       <Router>
-        <Navbar/>
+        <Newnavbar/>
         <Routes>
           <Route exact path="/" element={<Homepage/>} />
           <Route exact path="/login" element={<Login/>} />

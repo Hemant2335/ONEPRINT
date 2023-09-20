@@ -15,7 +15,7 @@ const ProductDetail = () => {
     try {
       
       const response = await fetch(
-        `http://localhost:3000/api/product/products/${slug}`
+        `https://backend-zeta-seven-80.vercel.app/api/product/products/${slug}`
       );
       const data = await response.json();
       setdata(data);
