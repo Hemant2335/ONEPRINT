@@ -1,5 +1,6 @@
 import React from "react";
 import Wrapper from "./Wrapper";
+import CatCard from "./CatCard";
 import bannimg from "../assets/onepiece.jpg";
 import bannimg1 from "../assets/Scarletwitch.jpg";
 import bannimg2 from "../assets/Avengers.jpg";
@@ -10,7 +11,7 @@ import { Carousel } from 'react-responsive-carousel';
 const Newbanner = () => {
   return (
     <Wrapper>
-      <div className=" min-h-[50vh] flex w-full mt-[5vh] gap-[10vw]">
+      <div className=" min-h-[50vh] flex w-full mt-[5vh] gap-[2vw]">
         {/* Main Banner */}
         <div className="shadow-3xl rounded-xl">
           <Carousel
@@ -56,11 +57,11 @@ const Newbanner = () => {
         </div>
 
         {/*  Content */}
-        <div className="grid grid-cols-2 min-w-[15vw]">
-          <div className="min-h-[5vh] min-w-[5vh] bg-red-400">Hloo</div>
-          <div className="min-h-[5vh] min-w-[5vh]">Hloo</div>
-          <div className="min-h-[5vh] min-w-[5vh]">Hloo</div>
-          <div className="min-h-[5vh] min-w-[5vh]">Hloo</div>
+        <div className="grid  grid-cols-2 min-w-[25vw] gap-2">
+          <CatCard/>
+          <CatCard/>
+          <CatCard/>
+          <CatCard/>
         </div>
       </div>
     </Wrapper>

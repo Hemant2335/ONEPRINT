@@ -2,7 +2,9 @@ import React from 'react'
 
 const CatCard = () => {
   return (
-    <div>CatCard</div>
+    <div className='bg-red-400 min-w-[10vw] rounded-xl'>
+
+    </div>
   )
 }
 
