@@ -8,5 +8,7 @@ import Loading from "./Loading";
 import CartproductCard from "./CartproductCard";
 import DashCard from "./DashCard";
 import Newnavbar from "./Newnavbar";
+import Newbanner from "./Newbanner";
+import CatCard from "./CatCard";
 
-export { Wrapper, Newnavbar , Navbar, Fotter, Banner  , ShopSection , ProductCard  , Loading , CartproductCard , DashCard};
+export { Wrapper, Newnavbar , Navbar, Fotter, Banner  , ShopSection , ProductCard  , Loading , CartproductCard , DashCard ,Newbanner,CatCard };

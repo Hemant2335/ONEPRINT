@@ -6,7 +6,9 @@ import { BsHandbag} from "react-icons/bs";
 
 const Newnavbar = () => {
   return (
-    <div className="min-h-[10vh] flex items-center border-b-2 ">
+    
+    <div className="min-h-[13vh] flex items-center border-b-2 ">
+      <Wrapper>
       <Wrapper>
         <div className="flex items-center justify-between">
             {/* Logo */}
@@ -44,7 +46,9 @@ const Newnavbar = () => {
 
           </div>
       </Wrapper>
+      </Wrapper>
     </div>
+    
   );
 };
 
